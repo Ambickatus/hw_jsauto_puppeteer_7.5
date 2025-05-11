@@ -5,7 +5,6 @@ const {
   clickBookButton,
   clickGetTicketButton,
   getTitle,
-  clickBookedSite,
   checkBookBut,
 } = require("./lib/func.js");
 
@@ -41,7 +40,7 @@ describe("Positive cinema tests", () => {
   test(" + Reservation common site for 'Witcher'", async () => {
     await chooseDate(page, dateSelectorW);
     await chooseHall(page, hallSelectorW);
-    savedBookedSite = await clickRandomSite(page, chooseSitePageSelectorW);
+    await clickRandomSite(page, chooseSitePageSelectorW);
     await clickBookButton(page, bookBtnSelector);
     await clickGetTicketButton(page, getTicketPageSelector);
     const title = await getTitle(page, getTitileSelector);
